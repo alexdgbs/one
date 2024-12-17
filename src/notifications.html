@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/one.png" type="image/x-icon">
+    <title>ONE - Notificaciones</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #fff;
+          color: #000;
+          overflow-y: scroll; 
+          overflow-x: hidden; 
+          padding: 16px;
+        }
+  
+        h1 {
+          text-align: center;
+          font-size: 2.5rem;
+          margin: 20px 0;
+          font-family: Raleway, sans-serif;
+          font-weight: 700;
+          letter-spacing: 2px;
+        }
+  
+        .highlight {
+          color: #2a2a2a;
+          font-weight: 700;
+        }
+  
+        .navbar {
+          position: fixed;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-width: 500px;
+          background: rgba(35, 35, 35, 0.9);
+          border-radius: 2rem;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 10px 0;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
+          transition: transform .3s ease;
+          z-index: 100;
+        }
+  
+        .navbar.hidden {
+          transform: translateY(100px) translateX(-50%);
+        }
+  
+        .navbar svg {
+          width: 25px;
+          height: 25px;
+          fill: #fff;
+        }
+  
+        .notifications {
+          max-width: 500px;
+          margin: 20px auto;
+          padding: 0 10px;
+        }
+  
+        .notification {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: #f9f9f9;
+          margin: 10px 0;
+          padding: 15px 10px;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          transition: transform 0.2s ease;
+        }
+  
+        .notification:hover {
+          transform: translateY(-3px);
+        }
+  
+        .notification-text {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          color: #333;
+          font-size: small;
+        }
+  
+        .notification-text svg {
+          width: 22px;
+          height: 22px;
+          margin-right: 10px;
+          fill: #000;
+        }
+  
+        .notification-time {
+          color: #888;
+          font-size: x-small;
+        }
+  
+        /* Media Queries */
+        @media (min-width: 768px) {
+          .navbar {
+            width: 80%;
+            max-width: 400px;
+            bottom: 20px;
+            padding: 8px 0;
+          }
+  
+          .navbar svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+  
+        @media (min-width: 1024px) {
+          .notifications {
+            max-width: 400px;
+            margin: 20px auto;
+          }
+        }
+        
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span class="highlight">ONE</span>
+    </h1>
+    
+
+    <div class="notifications">
+        <div class="notification">
+            <div class="notification-text">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16v2H4zm0 6h16v2H4zm0 6h16v2H4z" />
+              </svg>
+              <span>Solicitudes de seguimiento.</span>
+            </div>
+          </div>
+      <div class="notification">
+        <div class="notification-text">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+          <span>A vtlly le gustó tu foto.</span>
+        </div>
+        <div class="notification-time">Hace 5 min</div>
+      </div>
+
+      <div class="notification">
+        <div class="notification-text">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z" />
+          </svg>
+          <span>fercst_ comenzó a seguirte.</span>
+        </div>
+        <div class="notification-time">Hace 1 hora</div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <a href="../index.html">
+        <svg viewBox="0 0 24 24">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </svg>
+      </a>
+      <a href="notifications.html">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+      </a>
+      <a href="profile.html">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z" />
+        </svg>
+      </a>
+      <a href="upload.html" onclick="uploadPhoto()">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 4v16m8-8H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+
+    </nav>
+
+    <script>
+      function uploadPhoto() {
+        alert("Función de subida aún no implementada.");
+      }
+    </script>
+  </body>
+</html>

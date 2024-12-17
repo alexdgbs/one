@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/one.png" type="image/x-icon">
+    <title>ONE - Perfil</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #fff;
+          color: #000;
+          overflow-y: scroll; 
+          overflow-x: hidden; 
+          padding: 16px;
+        }
+      
+        h1 {
+          text-align: center;
+          font-size: 2.5rem;
+          margin: 20px 0;
+          font-family: 'Raleway', sans-serif;
+          font-weight: 700;
+          letter-spacing: 2px;
+        }
+      
+        .highlight {
+          color: #000;
+          font-weight: 700;
+        }
+      
+        .profile-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+        }
+      
+        .profile-header {
+          text-align: center;
+        }
+      
+        .profile-pic {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          background-color: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          color: #fff;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+      
+        .username {
+          font-size: 1rem;
+          font-weight: bold;
+          margin: 10px 0;
+          color: #454545;
+        }
+      
+        .stats {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          max-width: 320px; 
+          margin: 20px 0;
+          padding: 0 10px; 
+        }
+      
+        .stat {
+          text-align: center;
+          flex: 1;
+        }
+      
+        .stat-number {
+          font-size: large;
+          font-weight: bold;
+        }
+      
+        .stat-label {
+          font-size: small;
+          color: #666;
+        }
+      
+        .posts-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 10px;
+          width: 100%;
+          max-width: 500px;
+        }
+      
+        .post {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          border-radius: 1rem;
+          background-color: #ddd;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #666;
+        }
+      
+        .navbar {
+          position: fixed;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-width: 500px;
+          background: rgba(35, 35, 35, 0.9);
+          border-radius: 2rem;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 10px 0;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
+          transition: transform .3s ease;
+          z-index: 100;
+        }
+      
+        .navbar.hidden {
+          transform: translateY(100px) translateX(-50%);
+        }
+      
+        .navbar svg {
+          width: 25px;
+          height: 25px;
+          fill: #fff;
+        }
+      
+        .empty-posts {
+          text-align: center;
+          color: #aaa;
+          font-size: small;
+          margin: 30px 0;
+        }
+      
+        
+        @media (min-width: 768px) {
+          .navbar {
+            width: 80%;
+            max-width: 400px;
+            bottom: 20px;
+            padding: 8px 0;
+          }
+      
+          .navbar svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      </style>
+      
+  </head>
+  <body>
+    <h1>
+      <span class="highlight">ONE</span>
+    </h1>
+
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-pic">A</div>
+        <div class="username">alexdgbs</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Publicaciones</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Seguidores</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Siguiendo</div>
+        </div>
+      </div>
+
+      <div class="posts-container" id="posts">
+        
+        <div class="empty-posts">Aún no hay publicaciones.</div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <a href="../index.html">
+        <svg viewBox="0 0 24 24">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </svg>
+      </a>
+      <a href="notifications.html">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+      </a>
+      <a href="profile.html">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z" />
+        </svg>
+      </a>
+      <a href="upload.html" onclick="uploadPhoto()">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 4v16m8-8H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </nav>
+
+    <script>
+      function uploadPhoto() {
+        alert("Función de subida aún no implementada.");
+      }
+    </script>
+  </body>
+</html>
