@@ -48,7 +48,8 @@
         padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
         transition: transform .3s ease;
-        z-index: 100;
+        z-index: 1000;
+        
       }
 
       .navbar.hidden {
@@ -177,6 +178,31 @@
           padding-top: 100%;
         }
       }
+      @media (min-width: 1024px) {
+        .navbar {
+          position: fixed;
+          top: 50%;
+          bottom: auto;
+          left: 20px;
+          transform: translateY(-50%);
+          width: auto;
+          height: auto;
+          flex-direction: column;
+          padding: 10px;
+          border-radius: 2rem;
+        }
+        .navbar.hidden {
+          transform: none;
+          opacity: 1;
+          visibility: visible;
+        }
+      
+        .navbar svg {
+          margin: 10px 0;
+        }
+      }
+      
+      
     </style>
   </head>
   <body>
@@ -187,36 +213,50 @@
      
       <div class="post">
         <div class="post-header">
-          <img src="https://media.istockphoto.com/id/680931568/es/vector/letra-de-un-elemento-de-plantilla-de-dise%C3%B1o-de-tipograf%C3%ADa-de-estilo-de-degradado-blanco-y.jpg?s=612x612&w=0&k=20&c=szqhyjGe2_wzJhL8rouJTJd-DnVBmzziLJC1CGAToEE=" alt="User photo" class="user-photo">
-          <span class="username">alexdgbs</span>
+          <img src="https://i.pinimg.com/736x/ab/23/93/ab2393020d1f97a16e72bfd914bfeeed.jpg" alt="User photo" class="user-photo">
+          <span class="username">two-lines</span>
         </div>
         <div class="photo-container">
-          <img src="https://i.pinimg.com/736x/23/86/01/23860114b79aea2aa0e972fb1c33e647.jpg" alt="Photo">
+          <img src="https://i.pinimg.com/736x/cc/34/a9/cc34a94995a0d9ef4aadf75d88f0b084.jpg" alt="Photo">
         </div>
         <div class="likes-container">
           <svg viewBox="0 0 24 24">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
           </svg>
-          <span class="like-count">10</span>
+          <span class="like-count">23</span>
         </div>
       </div>
 
       <div class="post">
         <div class="post-header">
-          <img src="https://img.freepik.com/vector-premium/diseno-logotipo-empresa-monograma-letras-iniciales-v_745848-169.jpg" alt="User photo" class="user-photo">
-          <span class="username">vtlly</span>
+          <img src="https://i.pinimg.com/736x/ca/0b/6a/ca0b6ae64f17c5593c630b0c6d0b0e17.jpg" alt="User photo" class="user-photo">
+          <span class="username">xnot1</span>
         </div>
         <div class="photo-container">
-          <img src="https://i.pinimg.com/736x/32/3b/7b/323b7bda90bd13d75464cd2e2a2b6988.jpg" alt="Photo">
+          <img src="https://i.pinimg.com/736x/6e/34/93/6e3493a479855cfe545b937a3928eea3.jpg" alt="Photo">
         </div>
         <div class="likes-container">
           <svg viewBox="0 0 24 24">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
           </svg>
-          <span class="like-count">15</span>
+          <span class="like-count">78</span>
         </div>
       </div>
-
+      <div class="post">
+        <div class="post-header">
+          <img src="https://i.pinimg.com/736x/17/10/35/17103523439af5dae3bfca74a1970720.jpg" alt="User photo" class="user-photo">
+          <span class="username">one</span>
+        </div>
+        <div class="photo-container">
+          <img src="https://i.pinimg.com/736x/1d/51/11/1d5111a7c597323c9233273fe36f07ac.jpg" alt="Photo">
+        </div>
+        <div class="likes-container">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span class="like-count">120</span>
+        </div>
+      </div>
       <div class="post">
         <div class="post-header">
           <img src="https://img.freepik.com/vector-premium/logotipo-letras-s-contorno-diseno-minimalista-letra-geometrica_950268-65.jpg" alt="User photo" class="user-photo">
@@ -230,6 +270,21 @@
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
           </svg>
           <span class="like-count">25</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-header">
+          <img src="https://img.freepik.com/vector-premium/logotipo-letras-s-contorno-diseno-minimalista-letra-geometrica_950268-65.jpg" alt="User photo" class="user-photo">
+          <span class="username">artno</span>
+        </div>
+        <div class="photo-container">
+          <img src="https://i.pinimg.com/originals/87/87/11/8787116ccf1340e00cf5c7268e87f196.gif" alt="Photo">
+        </div>
+        <div class="likes-container">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span class="like-count">2309</span>
         </div>
       </div>
     </div>
@@ -249,7 +304,7 @@
         <svg viewBox="0 0 24 24">
           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z" />
         </svg>
-        <a href="src/upload.html" onclick="uploadPhoto()">
+        <a href="https://open.spotify.com/playlist/488px2zj6CnRGHOxKdR4Ig?si=aa3b7c9890ef4439">
           <svg viewBox="0 0 24 24">
             <path d="M12 4v16m8-8H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -260,19 +315,22 @@
     <script>
       let lastScrollY = window.scrollY;
       const navbar = document.getElementById('navbar');
+      
       window.addEventListener('scroll', () => {
-        if (window.scrollY > lastScrollY) {
-          navbar.classList.add('hidden');
+      
+        if (window.innerWidth < 1024) {
+          if (window.scrollY > lastScrollY) {
+            navbar.classList.add('hidden'); 
+          } else {
+            navbar.classList.remove('hidden'); 
+          }
+          lastScrollY = window.scrollY;
         } else {
+        
           navbar.classList.remove('hidden');
         }
-        lastScrollY = window.scrollY;
       });
-
-      let isLoggedIn = false;
-      function uploadPhoto() {
-        alert("Función de subida de fotos aún no implementada.");
-      }
+      
     </script>
   </body>
 </html>
