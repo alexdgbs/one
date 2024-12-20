@@ -6,183 +6,187 @@
     <link rel="icon" href="/static/one.png" type="image/x-icon">
     <title>ONE - Perfil</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
-        body {
-          margin: 0;
-          font-family: Arial, sans-serif;
-          background-color: #fff;
-          color: #000;
-          overflow-y: scroll; 
-          overflow-x: hidden; 
-          padding: 16px;
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #000;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 16px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 20px 0;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .highlight {
+        color: #000;
+        font-weight: 700;
+      }
+
+      .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .profile-header {
+        text-align: center;
+      }
+
+      .profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .username {
+        font-size: medium;
+        font-weight: bold;
+        margin: 15px 0;
+        color: #5c5c5c;
+        display: inline-block;
+        position: relative;
+      }
+
+      .verified {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+
+      .stats {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 320px;
+        margin: 20px 0;
+        padding: 0 10px;
+        font-size: small;
+      }
+
+      .stat {
+        text-align: center;
+        flex: 1;
+      }
+
+      .stat-number {
+        font-size: medium;
+        font-weight: bold;
+      }
+
+      .stat-label {
+        font-size: small;
+        color: #666;
+      }
+
+      .posts-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .post {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 1rem;
+        overflow: hidden;
+        background-color: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .post img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .navbar {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 500px;
+        background: rgba(35, 35, 35, 1);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 17px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
+        transition: transform .3s ease;
+        z-index: 1000;
+        border-radius: 1rem;
+      }
+
+      .navbar.hidden {
+        transform: translateY(100px) translateX(-50%);
+      }
+
+      .navbar svg {
+        width: 25px;
+        height: 25px;
+        fill: #fff;
+      }
+
+      @media (min-width: 768px) {
+        .navbar {
+          width: 80%;
+          max-width: 400px;
+          bottom: 20px;
+          padding: 8px 0;
         }
-      
-        h1 {
-          text-align: center;
-          font-size: 2.5rem;
-          margin: 20px 0;
-          font-family: 'Raleway', sans-serif;
-          font-weight: 700;
-          letter-spacing: 2px;
+
+        .navbar svg {
+          width: 20px;
+          height: 20px;
         }
-      
-        .highlight {
-          color: #000;
-          font-weight: 700;
-        }
-      
-        .profile-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 20px;
-        }
-      
-        .profile-header {
-          text-align: center;
-        }
-      
-        .profile-pic {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          background-color: #ccc;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 2rem;
-          color: #fff;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-      
-        .username {
-          font-size: medium;
-          font-weight: bold;
-           margin: 10px 0;
-          color: #5c5c5c;
-          
-        }
-      
-        .stats {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          max-width: 320px; 
-          margin: 20px 0;
-          padding: 0 10px; 
-        }
-      
-        .stat {
-          text-align: center;
-          flex: 1;
-        }
-      
-        .stat-number {
-          font-size: large;
-          font-weight: bold;
-        }
-      
-        .stat-label {
-          font-size: small;
-          color: #666;
-        }
-      
-        .posts-container {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-          gap: 10px;
-          width: 100%;
-          max-width: 500px;
-        }
-      
-        .post {
-          width: 100%;
-          aspect-ratio: 1 / 1;
-          border-radius: 1rem;
-          background-color: #ddd;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.2rem;
-          font-weight: bold;
-          color: #666;
-        }
-      
+      }
+
+      @media (min-width: 1024px) {
         .navbar {
           position: fixed;
-          bottom: 10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 90%;
-          max-width: 500px;
-          background: rgba(35, 35, 35, 0.9);
+          top: 50%;
+          bottom: auto;
+          left: 20px;
+          transform: translateY(-50%);
+          width: auto;
+          height: auto;
+          flex-direction: column;
+          padding: 10px;
           border-radius: 2rem;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          padding: 10px 0;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
-          transition: transform .3s ease;
-          z-index: 100;
         }
-      
         .navbar.hidden {
-          transform: translateY(100px) translateX(-50%);
+          transform: none;
+          opacity: 1;
+          visibility: visible;
         }
-      
+
         .navbar svg {
-          width: 25px;
-          height: 25px;
-          fill: #fff;
+          margin: 10px 0;
         }
-      
-        .empty-posts {
-          text-align: center;
-          color: #aaa;
-          font-size: small;
-          margin: 30px 0;
-        }
-      
-        
-        @media (min-width: 768px) {
-          .navbar {
-            width: 80%;
-            max-width: 400px;
-            bottom: 20px;
-            padding: 8px 0;
-          }
-      
-          .navbar svg {
-            width: 20px;
-            height: 20px;
-          }
-        }
-        @media (min-width: 1024px) {
-          .navbar {
-            position: fixed;
-            top: 50%;
-            bottom: auto;
-            left: 20px;
-            transform: translateY(-50%);
-            width: auto;
-            height: auto;
-            flex-direction: column;
-            padding: 10px;
-            border-radius: 2rem;
-          }
-          .navbar.hidden {
-            transform: none;
-            opacity: 1;
-            visibility: visible;
-          }
-        
-          .navbar svg {
-            margin: 10px 0;
-          }
-        }
-      </style>
-      
+      }
+    </style>
   </head>
   <body>
     <h1>
@@ -191,28 +195,37 @@
 
     <div class="profile-container">
       <div class="profile-header">
-        <div class="profile-pic">A</div>
-        <div class="username">alexdgbs</div>
+        <div class="profile-pic">
+          <img src="/static/profile.jpg" alt="Foto de perfil">
+        </div>
+        <div class="username">
+          O1E
+          <span class="verified">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1DA1F2" width="18px" height="18px">
+              <path d="M22.5 12.5L20 10l.5-3-3-.5L15 4l-2.5 2L10 4 8 6.5 5 7l.5 3L2.5 12l2.5 2-1 3 3 .5L8 20l2-2 2.5 2 2.5-2 2.5.5.5-3 2.5-2zM10.9 16.2L7.7 13l1.1-1.1 2.1 2.1 5.2-5.2L17 9.5l-6.1 6.7z"/>
+            </svg>
+          </span>
+        </div>
       </div>
-
       <div class="stats">
         <div class="stat">
-          <div class="stat-number">0</div>
+          <div class="stat-number">3</div>
           <div class="stat-label">Publicaciones</div>
         </div>
         <div class="stat">
-          <div class="stat-number">0</div>
+          <div class="stat-number">150</div>
           <div class="stat-label">Seguidores</div>
         </div>
         <div class="stat">
-          <div class="stat-number">0</div>
+          <div class="stat-number">120</div>
           <div class="stat-label">Siguiendo</div>
         </div>
       </div>
 
       <div class="posts-container" id="posts">
-        
-        <div class="empty-posts">Aún no hay publicaciones del creador.</div>
+        <div class="post"><img src="/static/ghost.jpg" alt="Publicación 1"></div>
+        <div class="post"><img src="/static/bear.jpg" alt="Publicación 2"></div>
+        <div class="post"><img src="/static/kid.jpg" alt="Publicación 3"></div>
       </div>
     </div>
 
@@ -224,15 +237,15 @@
       </a>
       <a href="notifications.html">
         <svg viewBox="0 0 24 24">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-          </svg>
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg>
       </a>
       <a href="profile.html">
         <svg viewBox="0 0 24 24">
           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z" />
         </svg>
       </a>
-      <a href="https://open.spotify.com/playlist/488px2zj6CnRGHOxKdR4Ig?si=aa3b7c9890ef4439">
+      <a href="https://news.google.com/home?hl=es-419&gl=MX&ceid=MX:es-419">
         <svg viewBox="0 0 24 24">
           <path d="M12 4v16m8-8H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
@@ -240,14 +253,10 @@
     </nav>
 
     <script>
-      function uploadPhoto() {
-        alert("Función de subida aún no implementada.");
-      }
       let lastScrollY = window.scrollY;
-      const navbar = document.getElementById('navbar');
+      const navbar = document.querySelector('.navbar');
       
       window.addEventListener('scroll', () => {
-      
         if (window.innerWidth < 1024) {
           if (window.scrollY > lastScrollY) {
             navbar.classList.add('hidden'); 
@@ -256,7 +265,6 @@
           }
           lastScrollY = window.scrollY;
         } else {
-        
           navbar.classList.remove('hidden');
         }
       });
